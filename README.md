@@ -2,9 +2,6 @@
 
 **Prepared as part of my OSCP Preparation.**
 
-Successfully passed the OSCP exam on May 20, 2024. Verify my achievement [here](https://www.credential.net/666b9a86-017d-48fa-894a-5c39ef1d7b7b).
-
-Feel free to reach out with any questions or inquiries at saisathvikruppa@proton.me!
 
 # General
 
@@ -518,6 +515,16 @@ hashcat -m <number> hash wordlists.txt --force
 ## Pivoting through SSH
 
 ```bash
+#local Port Forwarding
+ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname
+ssh -L 8443:10.10.10.184:8443 nadine@10.10.10.184
+
+Remote Port Fowrarding
+ssh -R remote_port:localhost:local_port ssh_server_hostname
+ssh –R 8080:localhost:5534 pnap@ssh.server.com
+
+#Dynamic Port Forwarding
+
 ssh adminuser@10.10.155.5 -i id_rsa -D 9050 #TOR port
 
 #Change the info in /etc/proxychains4.conf also enable "Quiet Mode"
