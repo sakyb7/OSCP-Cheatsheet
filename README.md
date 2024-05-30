@@ -779,6 +779,7 @@ smbclient -L //IP #or try with 4 /'s
 smbclient //server/share
 smbclient //server/share -U <username>
 smbclient //server/share -U domain/username
+smbclient //10.10.10.100/Replication -c 'recurse;ls' #To get list of all folder recursively
 
 #SMBmap
 smbmap -H <target_ip>
